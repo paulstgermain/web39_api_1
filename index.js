@@ -15,6 +15,10 @@ if (process.env.NODE_ENV === 'development') { // on Heroku machine, an env varia
     server.use(cors());
 }
 
+server.use('*', (req, res) => {
+    res.send('<h1>SUCCESS</h1>');
+})
+
 server.listen(port, () => {
     console.log(`Magic happening on Port:${port}`)
 })
